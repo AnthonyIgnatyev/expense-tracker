@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог категорий личных расходов учебного веб-приложения.">
+  <title>Каталог категорий — Учёт личных расходов</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Логотип сервиса «Учёт расходов»">
+        <span>Учёт расходов</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html" aria-current="page">Каталог категорий</a></li>
+          <li><a href="category.html">Пример категории</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">Каталог категорий расходов</h1>
+    <p class="lead">
+      Полный перечень категорий для учёта личных трат. Фильтры и сортировка будут
+      активны после подключения JavaScript во второй практической работе.
+    </p>
+
+    <form class="filters" aria-label="Фильтры каталога">
+      <div class="field">
+        <label for="filter-period">Период</label>
+        <select id="filter-period" name="period">
+          <option value="current">Текущий месяц</option>
+          <option value="previous">Прошлый месяц</option>
+          <option value="quarter">Квартал</option>
+          <option value="year">Год</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="filter-category">Категория</label>
+        <select id="filter-category" name="category">
+          <option value="all">Все категории</option>
+          <option value="food">Продукты</option>
+          <option value="transport">Транспорт</option>
+          <option value="housing">Жильё</option>
+          <option value="utilities">Коммунальные услуги</option>
+          <option value="health">Здоровье</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="sort-order">Сортировка</label>
+        <select id="sort-order" name="sort">
+          <option value="name">По названию</option>
+          <option value="amount-desc">По сумме: сначала большие</option>
+          <option value="amount-asc">По сумме: сначала маленькие</option>
+          <option value="date">По дате</option>
+        </select>
+      </div>
+
+      <button class="button" type="button">Применить</button>
+    </form>
+
+    <section aria-labelledby="catalog-title">
+      <h2 id="catalog-title" class="section-title">Все категории</h2>
+
+      <div class="grid">
+        <article class="card">
+          <img class="card-media" src="images/cat-food.svg" alt="Категория расходов: продукты питания" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Продукты</a></h3>
+            <p class="card-text">Покупки в супермаркетах, рынках и магазинах у дома.</p>
+            <p class="metric">Средний расход: 12 500 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-transport.svg" alt="Категория расходов: транспорт" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Транспорт</a></h3>
+            <p class="card-text">Проездные, такси, топливо и обслуживание автомобиля.</p>
+            <p class="metric">Средний расход: 6 800 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-housing.svg" alt="Категория расходов: жильё" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Жильё</a></h3>
+            <p class="card-text">Аренда, ипотека, содержание квартиры или дома.</p>
+            <p class="metric">Средний расход: 25 000 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-utilities.svg" alt="Категория расходов: коммунальные услуги" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Коммунальные услуги</a></h3>
+            <p class="card-text">Электричество, вода, отопление, вывоз мусора.</p>
+            <p class="metric">Средний расход: 5 200 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-health.svg" alt="Категория расходов: здоровье" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Здоровье</a></h3>
+            <p class="card-text">Лекарства, врачи, анализы и медицинские услуги.</p>
+            <p class="metric">Средний расход: 4 500 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-sport.svg" alt="Категория расходов: спорт" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Спорт</a></h3>
+            <p class="card-text">Абонементы, секции, снаряжение и соревнования.</p>
+            <p class="metric">Средний расход: 3 400 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-clothes.svg" alt="Категория расходов: одежда" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Одежда</a></h3>
+            <p class="card-text">Одежда, обувь, аксессуары и уход за вещами.</p>
+            <p class="metric">Средний расход: 7 100 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-entertainment.svg" alt="Категория расходов: развлечения" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Развлечения</a></h3>
+            <p class="card-text">Кино, концерты, подписки и досуг.</p>
+            <p class="metric">Средний расход: 3 900 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-cafe.svg" alt="Категория расходов: кафе и рестораны" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Кафе и рестораны</a></h3>
+            <p class="card-text">Обеды вне дома, кофе, доставки из ресторанов.</p>
+            <p class="metric">Средний расход: 8 200 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-education.svg" alt="Категория расходов: образование" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Образование</a></h3>
+            <p class="card-text">Курсы, книги, семинары и обучение.</p>
+            <p class="metric">Средний расход: 4 800 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-communication.svg" alt="Категория расходов: связь и интернет" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Связь и интернет</a></h3>
+            <p class="card-text">Мобильная связь, домашний интернет, цифровые сервисы.</p>
+            <p class="metric">Средний расход: 1 900 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-travel.svg" alt="Категория расходов: путешествия" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Путешествия</a></h3>
+            <p class="card-text">Билеты, проживание, экскурсии и туристические расходы.</p>
+            <p class="metric">Средний расход: 11 000 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Учёт личных расходов. Учебный проект, вариант 23.</p>
+      <nav aria-label="Навигация в подвале">
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты учебного веб-приложения для учёта личных расходов.">
+  <title>Контакты — Учёт личных расходов</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Логотип сервиса «Учёт расходов»">
+        <span>Учёт расходов</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог категорий</a></li>
+          <li><a href="category.html">Пример категории</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html" aria-current="page">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">Контакты</h1>
+    <p class="lead">
+      Учебный проект «Учёт личных расходов» разработан в рамках дисциплины
+      «Введение в интернет-технологии». Здесь можно оставить обратную связь по работе сервиса.
+    </p>
+
+    <div class="two-column">
+      <section class="panel" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title" class="section-title">Контактная информация</h2>
+
+        <address>
+          <ul class="contact-list">
+            <li><strong>Проект:</strong> Учёт личных расходов</li>
+            <li><strong>Назначение:</strong> контроль персональных финансов</li>
+            <li><strong>Email:</strong> <a href="mailto:example@expense-tracker.local">example@expense-tracker.local</a></li>
+            <li><strong>Телефон:</strong> <a href="tel:+70000000000">+7 000 000-00-00</a></li>
+            <li><strong>Адрес:</strong> г. Москва, учебный корпус, каб. 101</li>
+          </ul>
+        </address>
+
+        <h3>Режим работы поддержки</h3>
+        <div class="schedule">
+          <div><span>Понедельник — пятница</span><span>10:00 — 18:00</span></div>
+          <div><span>Суббота</span><span>11:00 — 15:00</span></div>
+          <div><span>Воскресенье</span><span>выходной</span></div>
+        </div>
+
+        <h3>Слоган</h3>
+        <p>
+          «Маленькие записи — большая ясность в личных финансах.»
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="feedback-title">
+        <h2 id="feedback-title" class="section-title">Форма обратной связи</h2>
+        <p class="inline-note">
+          Форма будет обрабатываться после подключения JavaScript и серверной части.
+        </p>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="feedback-name">Имя</label>
+            <input type="text" id="feedback-name" name="name" placeholder="Как к вам обращаться">
+          </div>
+
+          <div class="field">
+            <label for="feedback-email">Email</label>
+            <input type="email" id="feedback-email" name="email" placeholder="user@example.com">
+          </div>
+
+          <div class="field">
+            <label for="feedback-topic">Тема обращения</label>
+            <select id="feedback-topic" name="topic">
+              <option value="bug">Сообщить об ошибке</option>
+              <option value="idea">Предложить улучшение</option>
+              <option value="question">Задать вопрос</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="feedback-message">Сообщение</label>
+            <textarea id="feedback-message" name="message" placeholder="Опишите ваш вопрос или предложение"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="checkbox-label" for="feedback-consent">
+              <input type="checkbox" id="feedback-consent" name="consent">
+              <span>Согласен(-на) на обработку учебного обращения</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Отправить</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Учёт личных расходов. Учебный проект, вариант 23.</p>
+      <nav aria-label="Навигация в подвале">
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

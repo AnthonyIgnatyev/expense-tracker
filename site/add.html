@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страница добавления расхода и сводки по личным тратам.">
+  <title>Добавить расход — Учёт личных расходов</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Логотип сервиса «Учёт расходов»">
+        <span>Учёт расходов</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог категорий</a></li>
+          <li><a href="category.html">Пример категории</a></li>
+          <li><a href="add.html" aria-current="page">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">Добавить расход и посмотреть сводку</h1>
+    <p class="lead">
+      На этой странице пользователь вводит новую запись о расходе. В учебном прототипе
+      форма пока не сохраняет данные: сохранение появится после разработки серверной части.
+    </p>
+
+    <section class="section" aria-labelledby="form-title">
+      <h2 id="form-title" class="section-title">Новая запись</h2>
+
+      <form class="panel" action="#" method="post">
+        <div class="form-grid">
+          <div class="field">
+            <label for="expense-date">Дата расхода</label>
+            <input type="date" id="expense-date" name="expense_date" value="2026-10-19">
+          </div>
+
+          <div class="field">
+            <label for="expense-amount">Сумма, ₽</label>
+            <input type="number" id="expense-amount" name="amount" min="1" step="0.01" placeholder="Например, 850">
+          </div>
+
+          <div class="field">
+            <label for="expense-category">Категория</label>
+            <select id="expense-category" name="category_id">
+              <option value="">Выберите категорию</option>
+              <option value="food">Продукты</option>
+              <option value="transport">Транспорт</option>
+              <option value="housing">Жильё</option>
+              <option value="utilities">Коммунальные услуги</option>
+              <option value="health">Здоровье</option>
+              <option value="sport">Спорт</option>
+              <option value="clothes">Одежда</option>
+              <option value="entertainment">Развлечения</option>
+              <option value="cafe">Кафе и рестораны</option>
+              <option value="education">Образование</option>
+              <option value="communication">Связь и интернет</option>
+              <option value="travel">Путешествия</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="expense-payment">Способ оплаты</label>
+            <select id="expense-payment" name="payment_method">
+              <option value="card">Банковская карта</option>
+              <option value="cash">Наличные</option>
+              <option value="online">Онлайн-сервис</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="expense-comment">Комментарий</label>
+          <textarea id="expense-comment" name="comment" placeholder="Например: покупка в супермаркете"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="button" type="submit">Добавить расход</button>
+          <button class="button secondary" type="reset">Очистить форму</button>
+        </div>
+
+        <p class="inline-note">
+          После подключения сервера эта форма будет сохранять запись в базу данных.
+        </p>
+      </form>
+    </section>
+
+    <section class="section" aria-labelledby="summary-title">
+      <h2 id="summary-title" class="section-title">Сводка за октябрь 2026</h2>
+      <div class="summary">
+        <article class="panel">
+          <p class="summary-label">Всего расходов</p>
+          <p class="summary-value">48 250 ₽</p>
+        </article>
+
+        <article class="panel">
+          <p class="summary-label">Крупнейшая категория</p>
+          <p class="summary-value">Жильё</p>
+        </article>
+
+        <article class="panel">
+          <p class="summary-label">Средний дневной расход</p>
+          <p class="summary-value">2 540 ₽</p>
+        </article>
+
+        <article class="panel">
+          <p class="summary-label">Записей за месяц</p>
+          <p class="summary-value">27</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="history-title">
+      <h2 id="history-title" class="section-title">Последние расходы</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Пример данных для учебного прототипа</caption>
+          <thead>
+            <tr>
+              <th scope="col">Дата</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Сумма</th>
+              <th scope="col">Комментарий</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>18.10.2026</td>
+              <td>Продукты</td>
+              <td>1 840 ₽</td>
+              <td>Супермаркет</td>
+            </tr>
+            <tr>
+              <td>17.10.2026</td>
+              <td>Транспорт</td>
+              <td>320 ₽</td>
+              <td>Такси до работы</td>
+            </tr>
+            <tr>
+              <td>15.10.2026</td>
+              <td>Кафе и рестораны</td>
+              <td>1 190 ₽</td>
+              <td>Обед с коллегами</td>
+            </tr>
+            <tr>
+              <td>12.10.2026</td>
+              <td>Здоровье</td>
+              <td>2 450 ₽</td>
+              <td>Аптека</td>
+            </tr>
+            <tr>
+              <td>10.10.2026</td>
+              <td>Связь и интернет</td>
+              <td>750 ₽</td>
+              <td>Месячный платёж</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Учёт личных расходов. Учебный проект, вариант 23.</p>
+      <nav aria-label="Навигация в подвале">
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

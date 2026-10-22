@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Главная страница учебного веб-приложения для учёта личных расходов.">
+  <title>Учёт личных расходов — главная</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Логотип сервиса «Учёт расходов»">
+        <span>Учёт расходов</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="catalog.html">Каталог категорий</a></li>
+          <li><a href="category.html">Пример категории</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">Контролируйте личные расходы без сложных таблиц</h1>
+    <p class="lead">
+      Учебный сервис помогает учитывать траты по категориям, просматривать историю
+      расходов и получать понятную сводку за месяц.
+    </p>
+
+    <section class="section" aria-labelledby="features-title">
+      <h2 id="features-title" class="section-title">Основные возможности</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Быстрое добавление расходов</h3>
+            <p class="card-text">
+              Пользователь указывает дату, сумму, категорию и комментарий.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Категории трат</h3>
+            <p class="card-text">
+              Расходы группируются по понятным категориям: продукты, транспорт, жильё и другие.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Сводка за период</h3>
+            <p class="card-text">
+              Сервис показывает общую сумму, крупные категории и динамику расходов.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="popular-title">
+      <h2 id="popular-title" class="section-title">Популярные категории</h2>
+      <div class="grid">
+        <article class="card">
+          <img class="card-media" src="images/cat-food.svg" alt="Категория расходов: продукты питания" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Продукты</a></h3>
+            <p class="card-text">Покупки в супермаркетах, рынках и магазинах у дома.</p>
+            <p class="metric">Средний расход: 12 500 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-transport.svg" alt="Категория расходов: транспорт" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Транспорт</a></h3>
+            <p class="card-text">Проездные, такси, топливо и обслуживание автомобиля.</p>
+            <p class="metric">Средний расход: 6 800 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-housing.svg" alt="Категория расходов: жильё" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Жильё</a></h3>
+            <p class="card-text">Аренда, ипотека, содержание квартиры или дома.</p>
+            <p class="metric">Средний расход: 25 000 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-cafe.svg" alt="Категория расходов: кафе и рестораны" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Кафе и рестораны</a></h3>
+            <p class="card-text">Обеды вне дома, кофе, доставки из ресторанов.</p>
+            <p class="metric">Средний расход: 8 200 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-health.svg" alt="Категория расходов: здоровье" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Здоровье</a></h3>
+            <p class="card-text">Лекарства, врачи, анализы и медицинские услуги.</p>
+            <p class="metric">Средний расход: 4 500 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-media" src="images/cat-entertainment.svg" alt="Категория расходов: развлечения" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title"><a href="category.html">Развлечения</a></h3>
+            <p class="card-text">Кино, концерты, подписки и досуг.</p>
+            <p class="metric">Средний расход: 3 900 ₽/мес.</p>
+            <a class="button secondary" href="category.html">Открыть категорию</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Учёт личных расходов. Учебный проект, вариант 23.</p>
+      <nav aria-label="Навигация в подвале">
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="add.html">Добавить расход</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
