@@ -572,3 +572,69 @@ th {
     font-size: 0.95rem;
   }
 }
+
+/* Стили для виджета курсов */
+.rates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.rate-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.rate-card h4 {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.rate-value {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.trend-up {
+    color: #dc2626; 
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trend-down {
+    color: #16a34a;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.update-time {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.loading-state {
+    text-align: center;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.error-message-network {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+}
