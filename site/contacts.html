@@ -73,11 +73,13 @@
           <div class="field">
             <label for="feedback-name">Имя</label>
             <input type="text" id="feedback-name" name="name" placeholder="Как к вам обращаться">
+            <span class="error-message" id="error-feedback-name"></span>
           </div>
 
           <div class="field">
             <label for="feedback-email">Email</label>
             <input type="email" id="feedback-email" name="email" placeholder="user@example.com">
+            <span class="error-message" id="error-feedback-email"></span>
           </div>
 
           <div class="field">
@@ -93,6 +95,7 @@
           <div class="field">
             <label for="feedback-message">Сообщение</label>
             <textarea id="feedback-message" name="message" placeholder="Опишите ваш вопрос или предложение"></textarea>
+             <span class="error-message" id="error-feedback-message"></span>
           </div>
 
           <div class="field">
@@ -100,6 +103,7 @@
               <input type="checkbox" id="feedback-consent" name="consent">
               <span>Согласен(-на) на обработку учебного обращения</span>
             </label>
+            <span class="error-message" id="error-feedback-consent"></span>
           </div>
 
           <div class="form-actions">

@@ -638,3 +638,21 @@ th {
     text-align: center;
     font-weight: 600;
 }
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none; /* скрыто по умолчанию */
+}
+
+.error-message.visible {
+  display: block;
+}
+
+/* Красная рамка вокруг поля при ошибке */
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: #dc2626;
+}
