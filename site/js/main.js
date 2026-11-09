@@ -244,7 +244,149 @@ async function loadExchangeRates() {
     }
 }
 
-// Вызываем функцию после загрузки DOM
+// --- ЧАСТЬ 1: ФИЛЬТРАЦИЯ И СОРТИРОВКА КАТАЛОГА (ИСПРАВЛЕННАЯ) ---
+
+/**
+ * Глобальная переменная для хранения ВСЕХ карточек сразу после загрузки.
+ * Это критически важно, чтобы не потерять ссылки на скрытые элементы.
+ */
+let allCatalogCards = [];
+
+function initCatalog() {
+    const grid = document.getElementById('catalog-grid');
+    if (!grid) return;
+
+    // Сохраняем ссылку на все карточки ОДИН РАЗ
+    allCatalogCards = Array.from(grid.querySelectorAll('.card'));
+}
+
+/**
+ * Фильтрует и сортирует карточки, используя сохраненный массив allCatalogCards.
+ */
+function updateCatalog() {
+    const grid = document.getElementById('catalog-grid');
+    if (!grid || allCatalogCards.length === 0) return; 
+
+    const categoryFilter = document.getElementById('filter-category')?.value || 'all';
+    const sortOrder = document.getElementById('sort-order')?.value || 'name';
+
+    // 1. Определяем, какие карточки должны быть видны (из полного списка!)
+    let visibleCards = [];
+    
+    allCatalogCards.forEach(card => {
+        const cardCategory = card.dataset.category;
+        
+        if (categoryFilter === 'all' || cardCategory === categoryFilter) {
+            visibleCards.push(card);
+        } else {
+            // Прячем лишние
+            card.style.display = 'none';
+        }
+    });
+
+    // 2. Сортировка видимых карточек
+    visibleCards.sort((a, b) => {
+        switch (sortOrder) {
+            case 'name':
+                const titleA = a.querySelector('.card-title a').textContent.toLowerCase();
+                const titleB = b.querySelector('.card-title a').textContent.toLowerCase();
+                return titleA.localeCompare(titleB, 'ru');
+            
+            case 'amount-desc':
+                return parseInt(b.dataset.avgCost) - parseInt(a.dataset.avgCost);
+            
+            case 'amount-asc':
+                return parseInt(a.dataset.avgCost) - parseInt(b.dataset.avgCost);
+                
+            default:
+                return 0;
+        }
+    });
+
+    // 3. Обновление DOM
+    // Полностью очищаем контейнер сетки
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+
+    // Добавляем обратно ТОЛЬКО те, что прошли фильтр, в правильном порядке
+    visibleCards.forEach(card => {
+        card.style.display = ''; // Убираем inline display:none
+        grid.appendChild(card);
+    });
+
+    // 4. Сообщение "ничего не найдено"
+    if (visibleCards.length === 0) {
+        grid.innerHTML = '<p class="no-results">По заданным критериям категории не найдены.</p>';
+    }
+}
+
+// --- ОБЩИЙ БЛОК ЗАПУСКА СКРИПТОВ ---
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Загрузка курсов валют
     loadExchangeRates();
+
+    // 2. Инициализация валидации форм
+    initFormValidation();
+
+    // 3. Инициализация каталога (сохраняем список карточек)
+    initCatalog(); 
+    
+    // 4. Привязка событий к кнопкам и селектам каталога
+    initCatalogEvents();
 });
+
+/**
+ * Функция для настройки проверки форм
+ */
+function initFormValidation() {
+    // Форма добавления расхода (находим по наличию поля даты)
+    const expenseDateField = document.getElementById('expense-date');
+    if (expenseDateField) {
+        const form = expenseDateField.closest('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); 
+                if (validateExpenseForm()) {
+                    alert('Форма заполнена корректно! (Данные пока не сохраняются — сервер появится в ПР3)');
+                    form.reset();
+                }
+            });
+        }
+    }
+
+    // Форма обратной связи (находим по наличию поля имени)
+    const feedbackNameField = document.getElementById('feedback-name');
+    if (feedbackNameField) {
+        const form = feedbackNameField.closest('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (validateFeedbackForm()) {
+                    alert('Обращение отправлено! (Данные пока не сохраняются — сервер появится в ПР3)');
+                    form.reset();
+                }
+            });
+        }
+    }
+}
+
+/**
+ * Отдельная функция привязки событий для каталога
+ */
+function initCatalogEvents() {
+    const applyBtn = document.querySelector('.filters button[type="button"]');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            updateCatalog();
+        });
+    }
+    
+    // Реакция на изменение селекторов
+    const filters = document.querySelectorAll('.filters select');
+    filters.forEach(select => {
+        select.addEventListener('change', updateCatalog);
+    });
+}

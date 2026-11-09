@@ -656,3 +656,12 @@ select.invalid,
 textarea.invalid {
   border-color: #dc2626;
 }
+
+/* Если ничего не найдено в фильтрации */
+.no-results {
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem;
+    font-style: italic;
+    grid-column: 1 / -1;
+}

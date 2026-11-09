@@ -72,131 +72,143 @@
       <button class="button" type="button">Применить</button>
     </form>
 
-    <section aria-labelledby="catalog-title">
-      <h2 id="catalog-title" class="section-title">Все категории</h2>
+<section aria-labelledby="catalog-title">
+    <h2 id="catalog-title" class="section-title">Все категории</h2>
 
-      <div class="grid">
-        <article class="card">
-          <img class="card-media" src="images/cat-food.svg" alt="Категория расходов: продукты питания" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Продукты</a></h3>
-            <p class="card-text">Покупки в супермаркетах, рынках и магазинах у дома.</p>
-            <p class="metric">Средний расход: 12 500 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+    <div class="grid" id="catalog-grid">
+        <!-- Карточка Продукты -->
+        <article class="card" data-category="food" data-avg-cost="12500">
+            <img class="card-media" src="images/cat-food.svg" alt="Категория расходов: продукты питания" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Продукты</a></h3>
+                <p class="card-text">Покупки в супермаркетах, рынках и магазинах у дома.</p>
+                <p class="metric">Средний расход: 12 500 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-transport.svg" alt="Категория расходов: транспорт" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Транспорт</a></h3>
-            <p class="card-text">Проездные, такси, топливо и обслуживание автомобиля.</p>
-            <p class="metric">Средний расход: 6 800 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Транспорт -->
+        <article class="card" data-category="transport" data-avg-cost="6800">
+            <img class="card-media" src="images/cat-transport.svg" alt="Категория расходов: транспорт" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Транспорт</a></h3>
+                <p class="card-text">Проездные, такси, топливо и обслуживание автомобиля.</p>
+                <p class="metric">Средний расход: 6 800 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-housing.svg" alt="Категория расходов: жильё" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Жильё</a></h3>
-            <p class="card-text">Аренда, ипотека, содержание квартиры или дома.</p>
-            <p class="metric">Средний расход: 25 000 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Жильё -->
+        <article class="card" data-category="housing" data-avg-cost="25000">
+            <img class="card-media" src="images/cat-housing.svg" alt="Категория расходов: жильё" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Жильё</a></h3>
+                <p class="card-text">Аренда, ипотека, содержание квартиры или дома.</p>
+                <p class="metric">Средний расход: 25 000 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-utilities.svg" alt="Категория расходов: коммунальные услуги" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Коммунальные услуги</a></h3>
-            <p class="card-text">Электричество, вода, отопление, вывоз мусора.</p>
-            <p class="metric">Средний расход: 5 200 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Коммунальные услуги -->
+        <article class="card" data-category="utilities" data-avg-cost="5200">
+            <img class="card-media" src="images/cat-utilities.svg" alt="Категория расходов: коммунальные услуги" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Коммунальные услуги</a></h3>
+                <p class="card-text">Электричество, вода, отопление, вывоз мусора.</p>
+                <p class="metric">Средний расход: 5 200 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-health.svg" alt="Категория расходов: здоровье" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Здоровье</a></h3>
-            <p class="card-text">Лекарства, врачи, анализы и медицинские услуги.</p>
-            <p class="metric">Средний расход: 4 500 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Здоровье -->
+        <article class="card" data-category="health" data-avg-cost="4500">
+            <img class="card-media" src="images/cat-health.svg" alt="Категория расходов: здоровье" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Здоровье</a></h3>
+                <p class="card-text">Лекарства, врачи, анализы и медицинские услуги.</p>
+                <p class="metric">Средний расход: 4 500 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-sport.svg" alt="Категория расходов: спорт" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Спорт</a></h3>
-            <p class="card-text">Абонементы, секции, снаряжение и соревнования.</p>
-            <p class="metric">Средний расход: 3 400 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Спорт -->
+        <article class="card" data-category="sport" data-avg-cost="3400">
+            <img class="card-media" src="images/cat-sport.svg" alt="Категория расходов: спорт" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Спорт</a></h3>
+                <p class="card-text">Абонементы, секции, снаряжение и соревнования.</p>
+                <p class="metric">Средний расход: 3 400 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-clothes.svg" alt="Категория расходов: одежда" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Одежда</a></h3>
-            <p class="card-text">Одежда, обувь, аксессуары и уход за вещами.</p>
-            <p class="metric">Средний расход: 7 100 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Одежда -->
+        <article class="card" data-category="clothes" data-avg-cost="7100">
+            <img class="card-media" src="images/cat-clothes.svg" alt="Категория расходов: одежда" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Одежда</a></h3>
+                <p class="card-text">Одежда, обувь, аксессуары и уход за вещами.</p>
+                <p class="metric">Средний расход: 7 100 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-entertainment.svg" alt="Категория расходов: развлечения" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Развлечения</a></h3>
-            <p class="card-text">Кино, концерты, подписки и досуг.</p>
-            <p class="metric">Средний расход: 3 900 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Развлечения -->
+        <article class="card" data-category="entertainment" data-avg-cost="3900">
+            <img class="card-media" src="images/cat-entertainment.svg" alt="Категория расходов: развлечения" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Развлечения</a></h3>
+                <p class="card-text">Кино, концерты, подписки и досуг.</p>
+                <p class="metric">Средний расход: 3 900 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-cafe.svg" alt="Категория расходов: кафе и рестораны" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Кафе и рестораны</a></h3>
-            <p class="card-text">Обеды вне дома, кофе, доставки из ресторанов.</p>
-            <p class="metric">Средний расход: 8 200 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Кафе и рестораны -->
+        <article class="card" data-category="cafe" data-avg-cost="8200">
+            <img class="card-media" src="images/cat-cafe.svg" alt="Категория расходов: кафе и рестораны" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Кафе и рестораны</a></h3>
+                <p class="card-text">Обеды вне дома, кофе, доставки из ресторанов.</p>
+                <p class="metric">Средний расход: 8 200 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-education.svg" alt="Категория расходов: образование" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Образование</a></h3>
-            <p class="card-text">Курсы, книги, семинары и обучение.</p>
-            <p class="metric">Средний расход: 4 800 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Образование -->
+        <article class="card" data-category="education" data-avg-cost="4800">
+            <img class="card-media" src="images/cat-education.svg" alt="Категория расходов: образование" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Образование</a></h3>
+                <p class="card-text">Курсы, книги, семинары и обучение.</p>
+                <p class="metric">Средний расход: 4 800 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-communication.svg" alt="Категория расходов: связь и интернет" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Связь и интернет</a></h3>
-            <p class="card-text">Мобильная связь, домашний интернет, цифровые сервисы.</p>
-            <p class="metric">Средний расход: 1 900 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Связь и интернет -->
+        <article class="card" data-category="communication" data-avg-cost="1900">
+            <img class="card-media" src="images/cat-communication.svg" alt="Категория расходов: связь и интернет" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Связь и интернет</a></h3>
+                <p class="card-text">Мобильная связь, домашний интернет, цифровые сервисы.</p>
+                <p class="metric">Средний расход: 1 900 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
 
-        <article class="card">
-          <img class="card-media" src="images/cat-travel.svg" alt="Категория расходов: путешествия" loading="lazy">
-          <div class="card-body">
-            <h3 class="card-title"><a href="category.html">Путешествия</a></h3>
-            <p class="card-text">Билеты, проживание, экскурсии и туристические расходы.</p>
-            <p class="metric">Средний расход: 11 000 ₽/мес.</p>
-            <a class="button secondary" href="category.html">Подробнее</a>
-          </div>
+        <!-- Карточка Путешествия -->
+        <article class="card" data-category="travel" data-avg-cost="11000">
+            <img class="card-media" src="images/cat-travel.svg" alt="Категория расходов: путешествия" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title"><a href="category.html">Путешествия</a></h3>
+                <p class="card-text">Билеты, проживание, экскурсии и туристические расходы.</p>
+                <p class="metric">Средний расход: 11 000 ₽/мес.</p>
+                <a class="button secondary" href="category.html">Подробнее</a>
+            </div>
         </article>
-      </div>
-    </section>
+    </div>
+</section>
   </main>
 
   <footer class="site-footer">
